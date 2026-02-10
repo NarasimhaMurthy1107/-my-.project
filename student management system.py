@@ -1,12 +1,11 @@
 from pymongo import MongoClient
 
-# Database connection
+
 def get_collection():
     client = MongoClient("mongodb://localhost:27017/")
     db = client["student_db"]
     return db["students"]
 
-# Insert student
 def insert_student():
     name = input("Enter name: ")
     age = int(input("Enter age: "))
@@ -22,7 +21,6 @@ def insert_student():
     collection.insert_one(student)
     print("Student inserted successfully!")
 
-# Update student
 def update_student():
     name = input("Enter student name to update: ")
     new_course = input("Enter new course: ")
@@ -38,7 +36,7 @@ def update_student():
     else:
         print("Student not found!")
 
-# Delete student
+
 def delete_student():
     name = input("Enter student name to delete: ")
 
@@ -50,7 +48,7 @@ def delete_student():
     else:
         print("Student not found!")
 
-# Search student
+
 def search_student():
     name = input("Enter student name to search: ")
 
@@ -64,7 +62,7 @@ def search_student():
     else:
         print("Student not found!")
 
-# Menu
+
 def menu():
     while True:
         print("\n--- Student Management System (MongoDB) ---")
